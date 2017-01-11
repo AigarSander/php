@@ -12,7 +12,7 @@ class text
     var $str = '';
 
     //constructor
-    function __construct($s) {
+    function __construct($s = '') {
         $this->setText($s);
     }
 
