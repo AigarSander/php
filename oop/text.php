@@ -11,6 +11,11 @@ class text
     //class variables | Instance variables
     var $str = '';
 
+    //constructor
+    function __construct($s) {
+        $this->setText($s);
+    }
+
     //methods
     function setText($s) {
         $this->str = $s;
