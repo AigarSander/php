@@ -12,4 +12,5 @@ $sentence = new text();
 echo '<pre>';
 print_r($sentence);
 echo '</pre>';
+
 ?>
