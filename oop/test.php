@@ -12,4 +12,8 @@ echo '<pre>';
 print_r($sentence);
 echo '</pre>';
 $sentence ->setText('Hello text object!');
+echo '<pre>';
+print_r($sentence);
+echo '</pre>';
+$sentence ->showText();
 ?>
