@@ -18,5 +18,5 @@ class text
 
     function showText() {
         echo $this->str.'</br>';
-    }// shot text
+    }// show text
 }//Class end
