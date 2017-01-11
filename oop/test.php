@@ -6,6 +6,7 @@
  * Time: 14:54
  */
 require_once ('text.php');
+require_once ('ctext.php');
 
 $sentence = new text();
 echo '<pre>';
@@ -23,4 +24,10 @@ print_r($sentence2);
 echo '</pre>';
 $sentence ->showText();
 echo '<hr>';
+$sentence3 = new ctext('Hello text by const.(colored)');
+$sentence3->setColor('#FF0000');
+echo '<pre>';
+print_r($sentence3);
+echo '</pre>';
+$sentence ->showText();
 ?>
