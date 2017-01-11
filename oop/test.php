@@ -22,4 +22,5 @@ echo '<pre>';
 print_r($sentence2);
 echo '</pre>';
 $sentence ->showText();
+echo '<hr>';
 ?>
