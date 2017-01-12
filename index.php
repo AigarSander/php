@@ -9,12 +9,7 @@ define('CLASSES_DIR', 'classes/');
 define('TMPL_DIR', 'tmpl/');
 require_once (CLASSES_DIR.'template.php');
 
-$tmpl = new template();
-$tmpl->file = 'main.html';
-echo '<pre>';
-print_r($tmpl);
-echo '</pre>';
-$tmpl->loadFile();
+$tmpl = new template('main.html');
 echo '<pre>';
 print_r($tmpl);
 echo '</pre>';

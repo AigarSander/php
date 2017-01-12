@@ -15,6 +15,11 @@ class template {
     var $file = '';
     var $content = false;
 
+    function __construct($f){
+        $this->file = $f;
+        $this->loadFile();
+    }
+
     function loadFile() {
         $f = $this->file;
         if(!is_dir(TMPL_DIR)) {
