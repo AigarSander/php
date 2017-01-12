@@ -22,12 +22,12 @@ $sentence2 = new text('Hello text by const.');
 echo '<pre>';
 print_r($sentence2);
 echo '</pre>';
-$sentence ->showText();
+$sentence2 ->showText();
 echo '<hr>';
 $sentence3 = new ctext('Hello text by const.(colored)');
 $sentence3->setColor('#FF0000');
 echo '<pre>';
 print_r($sentence3);
 echo '</pre>';
-$sentence ->showText();
+$sentence3 ->showText();
 ?>
