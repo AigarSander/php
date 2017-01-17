@@ -14,6 +14,7 @@ if(!defined('TMPL_DIR')) {
 class template {
     var $file = '';
     var $content = false;
+    var $vars = array();
 
     function __construct($f){
         $this->file = $f;
@@ -51,5 +52,17 @@ class template {
 
     function readFile($f) {
         $this->content = file_get_contents($f);
+    }
+
+    function set($name, $val){
+        $this->vars[$name] = $val;
+    }
+
+    function parse(){
+        $str = $this->content;
+        foreach ($this->vars as $name=>$val){
+            $str = str_replace('{'.$name.'}', $val, $str);
+        }
+        return $str;
     }
 }

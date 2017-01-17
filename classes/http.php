@@ -30,4 +30,8 @@ class http {
             }
         }
     }
+
+    function set($name, $value) {
+        $this->vars[$name] = $value;
+    }
 }
