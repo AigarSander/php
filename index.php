@@ -8,24 +8,16 @@
 define('CLASSES_DIR', 'classes/');
 define('TMPL_DIR', 'tmpl/');
 require_once (CLASSES_DIR.'template.php');
+require_once (CLASSES_DIR.'http.php');
 require_once (CLASSES_DIR.'linkObject.php');
 
-$tmpl = new template('main.html');
-$tmpl->set('Title', '.oOo.oOo.oOo.');
-echo $tmpl->parse();
 $http = new linkObject();
-echo '<pre>';
-print_r($http);
-echo '</pre>';
+require_once ('menu.php');
 
-echo '<hr/>';
+$tmpl = new template('main');
 
-$http->set('nimi', 'Aigar');
-$http->set('pw', 'test');
-echo '<pre>';
-print_r($http->vars);
-echo '</pre>';
+$tmpl->add('Title', '.oOo.oOo.oOo.');
+$tmpl->add('menu', $menu->parse());
 
-$link = $http->getLink(array('kasutaja' => 'Aigar', 'parool' => 'qwerty'));
-echo $link;
+echo $tmpl->parse();
 ?>

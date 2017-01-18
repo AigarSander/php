@@ -33,19 +33,22 @@ class template {
         }
 
         $f = TMPL_DIR.$this->file;
-
         if(file_exists($f) and is_file($f) and is_readable($f)) {
             $this->readFile($f);
         }
 
         $f = TMPL_DIR.$this->file.'.html';
+        if(file_exists($f) and is_file($f) and is_readable($f)) {
+            $this->readFile($f);
+        }
 
+        $f = TMPL_DIR.str_replace('.', '/', $this->file).'.html';
         if(file_exists($f) and is_file($f) and is_readable($f)) {
             $this->readFile($f);
         }
 
         if($this->content === false) {
-            echo 'Template\'s content doens\'t excist or is corrupted!';
+            echo 'Template\'s content does not exist or is corrupted!('.$this->file.')';
             exit;
         }
     }
@@ -56,6 +59,14 @@ class template {
 
     function set($name, $val){
         $this->vars[$name] = $val;
+    }
+
+    function add($name, $val) {
+        if(!isset($this->vars[$name])) {
+            $this->set($name, $val);
+        } else {
+            $this->vars[$name] .= $val;
+        }
     }
 
     function parse(){
