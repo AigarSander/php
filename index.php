@@ -16,8 +16,9 @@ require_once ('menu.php');
 
 $tmpl = new template('main');
 
-$tmpl->add('Title', '.oOo.oOo.oOo.');
-$tmpl->add('menu', $menu->parse());
+$tmpl->set('Title', '.oOo.oOo.oOo.');
+$tmpl->set('menu', $menu->parse());
 
 echo $tmpl->parse();
+echo $http->get('act');
 ?>

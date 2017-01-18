@@ -8,9 +8,14 @@
 $menu = new template('menu.menu');
 $menuItem = new template('menu.item');
 
-$menuItem->add('name', 'Esimene leht');
-$link = $http->getLink(array('page'=>'first'));
-$menuItem->add('link', $link);
+$link = $http->getLink(array('act'=>'first'));
+$menuItem->set('name', 'Esimene leht');
+$menuItem->set('link', $link);
+$menu->set('items', $menuItem->parse());
 
+$link = $http->getLink(array('act'=>'second'));
+$menuItem->set('name', 'Teine leht');
+$menuItem->set('link', $link);
 $menu->add('items', $menuItem->parse());
+
 ?>

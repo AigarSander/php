@@ -39,7 +39,7 @@ class linkObject extends http{
         }
 
         if($link != '') {
-            $this->baseUrl.'?'.$link;
+            $link = $this->baseUrl.'?'.$link;
         } else {
             $link = $this->baseUrl;
         }
