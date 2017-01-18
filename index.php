@@ -8,24 +8,18 @@
 define('CLASSES_DIR', 'classes/');
 define('TMPL_DIR', 'tmpl/');
 require_once (CLASSES_DIR.'template.php');
-require_once (CLASSES_DIR.'http.php');
+require_once (CLASSES_DIR.'linkObject.php');
 
 $tmpl = new template('main.html');
 $tmpl->set('Title', '.oOo.oOo.oOo.');
 echo $tmpl->parse();
-$http = new http();
+$http = new linkObject();
 echo '<pre>';
 print_r($http);
 echo '</pre>';
 
 echo '<hr/>';
 
-echo REMOTE_ADDR.'</br>';
-echo PHP_SELF.'</br>';
-echo SCRIPT_NAME.'</br>';
-echo HTTP_HOST.'</br>';
-
-echo '<hr/>';
 $http->set('nimi', 'Aigar');
 $http->set('pw', 'test');
 echo '<pre>';
