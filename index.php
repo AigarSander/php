@@ -25,4 +25,7 @@ $http->set('pw', 'test');
 echo '<pre>';
 print_r($http->vars);
 echo '</pre>';
+
+$link = $http->getLink(array('kasutaja' => 'Aigar', 'parool' => 'qwerty'));
+echo $link;
 ?>

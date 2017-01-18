@@ -23,8 +23,27 @@ class linkObject extends http{
         $this->baseUrl = $this->protocol.HTTP_HOST.SCRIPT_NAME;
     }
 
-    function addToLink($link, $name, $val) {
+    function addToLink(&$link, $name, $val) {
+        if($link != '') {
+            $link .= $this->delim;
+        }
+
         $link = $link.fixUrl($name).$this->eq.fixUrl($val);
-        echo $link;
+    }
+
+    function getLink($add = array()) {
+        $link = '';
+
+        foreach ($add as $name => $val) {
+            $this->addToLink($link, $name, $val);
+        }
+
+        if($link != '') {
+            $this->baseUrl.'?'.$link;
+        } else {
+            $link = $this->baseUrl;
+        }
+
+        return $link;
     }
 }
