@@ -41,7 +41,7 @@ class http {
     }
 
     function get($name, $fix = true) {
-        if(!isset($this->vars[$name])) {
+        if(isset($this->vars[$name])) {
             if($fix) {
                 return fixHtml($this->vars[$name]);
             }
