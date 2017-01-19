@@ -1,9 +1,14 @@
+body {
+    font-family: sans-serif, Arial, SansSerif;
+}
+
 table {
     margin: 0 auto;
+    padding: 0;
 }
 
 ul {
-
+    padding: 0 0 0 5px;
 }
 
 li {
