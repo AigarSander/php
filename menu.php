@@ -8,14 +8,16 @@
 $menu = new template('menu.menu');
 $menuItem = new template('menu.item');
 
-$link = $http->getLink(array('act'=>'first'));
-$menuItem->set('name', 'Esimene leht');
-$menuItem->set('link', $link);
-$menu->set('items', $menuItem->parse());
+$sql = 'select content_id, title from content where parent_id=0 AND show_in_menu=1 ORDER BY sort ASC;';
+$res = $db->getArray($sql);
 
-$link = $http->getLink(array('act'=>'second'));
-$menuItem->set('name', 'Teine leht');
-$menuItem->set('link', $link);
-$menu->add('items', $menuItem->parse());
+if($res != false) {
+    foreach ($res as $page) {
+        $item->set('name', $page(['title']));
+        $link = $http->getLink(array('page_id'=>$page['content_id']));
+        $item->set('link', $link);
 
+        $menu->add('items', $item->parse());
+    }
+}
 ?>
