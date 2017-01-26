@@ -14,15 +14,8 @@ $tmpl->set('Title', '.oOo.oOo.oOo.');
 $tmpl->set('menu', $menu->parse());
 $tmpl->set('nav_bar', 'NAVIGATION');
 $tmpl->set('lang_bar', 'LANGUAGE');
-$tmpl->set('content', 'CONTENT');
+$tmpl->set('content', $http->get('content'));
 
 echo $tmpl->parse();
-
-$db->connect();
-$res = $db->getArray('SELECT NOW();');
-echo '<pre>';
-print_r($res);
-echo '</pre>';
-
-echo $db->showHistory();
+$sess->clearSessions();
 ?>

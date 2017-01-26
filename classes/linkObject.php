@@ -17,6 +17,7 @@ class linkObject extends http{
     var $protocol = 'http://';
     var $delim = '&amp';
     var $eq = '=';
+    var $aie = array('sid'=>'sid');
 
     function __construct() {
         parent::__construct();
@@ -31,11 +32,25 @@ class linkObject extends http{
         $link = $link.fixUrl($name).$this->eq.fixUrl($val);
     }
 
-    function getLink($add = array()) {
+    function getLink($add = array(), $aie = array(), $not = array()) {
         $link = '';
 
         foreach ($add as $name => $val) {
             $this->addToLink($link, $name, $val);
+        }
+
+        foreach ($aie as $name) {
+            $val = $this->get($name);
+            if($val !== false) {
+                $this->addToLink($link, $name, $val);
+            }
+        }
+
+        foreach ($this->aie as $name) {
+            $val = $this->get($name);
+            if($val !== false and !in_array($name, $not)) {
+                $this->addToLink($link, $name, $val);
+            }
         }
 
         if($link != '') {

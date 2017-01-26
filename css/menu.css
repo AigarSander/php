@@ -5,10 +5,12 @@ body {
 table {
     margin: 0 auto;
     padding: 0;
+    text-align: center;
+    border: 1px solid black;
 }
 
 ul {
-    padding: 0 0 0 5px;
+    padding: 10px 0;
 }
 
 li {
@@ -31,5 +33,6 @@ a:hover {
 
 .tbl-content {
     background-color: #9b9b9b;
-    padding: 0 5px;
+    width: 100%;
+    height: 100%;
 }

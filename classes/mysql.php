@@ -42,7 +42,7 @@ class mysql {
             echo mysqli_error($this->conn).'<br />';
             exit;
         }
-        echo $time = $this->getMicroTime() - $begin;
+        $time = $this->getMicroTime() - $begin;
         $this->history[] = array('sql' => $sql, 'time' => $time);
         return $res;
     }
@@ -55,9 +55,9 @@ class mysql {
         }
         if(count($data) == 0) {
             return false;
-        } else {
-            return $data;
         }
+
+        return $data;
     }
 
     function showHistory() {
