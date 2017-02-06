@@ -18,7 +18,7 @@ class linkObject extends http {
     var $protocol = 'http://';
     var $delim = '&amp;';
     var $eq = '=';
-    var $aie = array('sid'=>'sid');
+    var $aie = array('lang_id','sid'=>'sid');
 
     function __construct(){
         parent::__construct();
