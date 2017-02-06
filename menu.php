@@ -21,7 +21,7 @@ if($res != false) {
     foreach ($res as $page) {
         $link = $http->getLink(array('page_id'=>$page['content_id']));
         $item->set('link', $link);
-        $item->set('name', $page['title']);
+        $item->set('name', $tr($page['title']));
         $menu->add('items', $item->parse());
     }
 }
@@ -29,7 +29,7 @@ if($res != false) {
 if(USER_ID != ROLE_NONE) {
     $link = $http->getLink(array('act' => 'logout'));
     $item->set('link', $link);
-    $item->set('name', 'LOG OUT');
+    $item->set('name', tr('Logi v&aum;lja'));
     $menu->add('items', $item->parse());
 }
 $tmpl->set('menu', $menu->parse());
