@@ -12,7 +12,7 @@ define('STYLE_DIR', 'css/');
 define('ACTS_DIR', 'acts/');
 define('LIB_DIR', 'lib/');
 define('DEFAULT_ACT', 'default');
-define('LANG_DIR', 'lang/');
+define('LANG_DIR', 'lang/' );
 
 define('ROLE_NONE', 0);
 define('ROLE_ADMIN', 1);
