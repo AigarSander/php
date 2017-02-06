@@ -13,8 +13,9 @@ $tmpl->set('title', 'TITLE');
 
 require_once 'menu.php';
 
-$tmpl->set('nav_bar', 'NAVIGATION');
-$tmpl->set('lang_bar', 'LANGUAGE');
+$tmpl->set('nav_bar', $sess->user_data['username']);
+
+require_once('lang.php');
 
 require_once 'act.php';
 $tmpl->set('content', $http->get('content'));

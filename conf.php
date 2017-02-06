@@ -36,7 +36,7 @@ $siteLangs = array(
     'et' => 'estonian',
     'en' => 'english',
     'ru' => 'russian'
-)
+);
 
 $lang_id = $http->get('lang_id');
 if(!isset($siteLangs[$lang_id])) {
