@@ -17,6 +17,8 @@ define('ROLE_NONE', 0);
 define('ROLE_ADMIN', 1);
 define('ROLE_USER', 2);
 
+define('DEFAULT_LANG', 'et');
+
 require_once LIB_DIR.'utils.php';
 require_once CLASSES_DIR.'template.php';
 require_once CLASSES_DIR.'http.php';
