@@ -26,7 +26,7 @@ require_once CLASSES_DIR.'http.php';
 require_once CLASSES_DIR.'linkObject.php';
 require_once CLASSES_DIR.'mysql.php';
 require_once CLASSES_DIR.'session.php';
-require_once 'dbconf.php';
+require_once 'db_conf.php';
 
 $http = new linkobject();
 $db = new mysql(DB_HOST,DB_USER,DB_PASS,DB_NAME);
