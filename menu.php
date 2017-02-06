@@ -8,7 +8,7 @@
 $menu = new template('menu.menu');
 $item = new template('menu.item');
 
-$sql = 'select content_id, title from content where parent_id="0" AND show_in_menu="1" ORDER BY sort ASC;';
+$sql = 'select content_id, title from content where parent_id="0" AND show_in_menu="1" ORDER BY sort ASC';
 $res = $db->getArray($sql);
 
 if($res != false) {

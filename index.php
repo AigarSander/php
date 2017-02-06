@@ -5,17 +5,19 @@
  * Date: 12.01.2017
  * Time: 12:58
  */
-require_once ('conf.php');
-require_once ('menu.php');
+
+require_once 'conf.php';
 
 $tmpl = new template('main');
+$tmpl->set('title', 'TITLE');
 
-$tmpl->set('Title', '.oOo.oOo.oOo.');
+require_once 'menu.php';
 $tmpl->set('menu', $menu->parse());
+
 $tmpl->set('nav_bar', 'NAVIGATION');
 $tmpl->set('lang_bar', 'LANGUAGE');
 $tmpl->set('content', $http->get('content'));
-
 echo $tmpl->parse();
-$sess->clearSessions();
+
+require_once 'act.php';
 ?>
