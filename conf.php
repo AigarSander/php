@@ -32,6 +32,17 @@ $http = new linkobject();
 $db = new mysql(DB_HOST,DB_USER,DB_PASS,DB_NAME);
 $sess = new session($http, $db);
 
-$lang_id = DEFAULT_LANG;
-$http->set('lang_id', $lang_id);
+$siteLangs = array(
+    'et' => 'estonian',
+    'en' => 'english',
+    'ru' => 'russian'
+)
+
+$lang_id = $http->get('lang_id');
+if(!isset($siteLangs[$lang_id])) {
+    $lang_id = DEFAULT_LANG;
+    $http->set('lang_id', $lang_id);
+}
+
+define('LANG_ID', $lang_id);
 ?>
