@@ -21,7 +21,7 @@ if($res != false) {
     foreach ($res as $page) {
         $link = $http->getLink(array('page_id'=>$page['content_id']));
         $item->set('link', $link);
-        $item->set('name', $tr($page['title']));
+        $item->set('name', tr($page['title']));
         $menu->add('items', $item->parse());
     }
 }
