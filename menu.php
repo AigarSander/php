@@ -29,7 +29,7 @@ if($res != false) {
 if(USER_ID != ROLE_NONE) {
     $link = $http->getLink(array('act' => 'logout'));
     $item->set('link', $link);
-    $item->set('name', tr('Logi v&aum;lja'));
+    $item->set('name', tr('Logi välja'));
     $menu->add('items', $item->parse());
 }
 $tmpl->set('menu', $menu->parse());

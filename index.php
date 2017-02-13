@@ -18,7 +18,6 @@ $tmpl->set('nav_bar', $sess->user_data['username']);
 require_once('lang.php');
 
 require_once 'act.php';
-$tmpl->set('content', $http->get('content'));
 
 echo $tmpl->parse();
 ?>
