@@ -9,7 +9,7 @@
 require_once 'conf.php';
 
 $tmpl = new template('main');
-$tmpl->set('title', 'Tiitel');
+$tmpl->set('title', tr('Tiitel'));
 
 require_once 'menu.php';
 

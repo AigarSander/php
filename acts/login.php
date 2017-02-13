@@ -5,5 +5,6 @@
  * Date: 13.02.2017
  * Time: 12:14
  */
-
+$sess->createSession();
+$http->redirect();
 ?>

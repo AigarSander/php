@@ -13,13 +13,13 @@ function tr($txt) {
         return $txt;
     }
 
-    if(LANG_ID === false) {
+    if(LANG_ID !== false) {
         $fn = LANG_DIR.'lang_'.LANG_ID.'.php';
         if(file_exists($fn) and is_file($fn) and is_readable($fn)) {
-            require_once ($fn);
+            require ($fn);
             $trans = $_trans;
         } else {
-            $trans = $array();
+            $trans = array();
         }
     }
 
