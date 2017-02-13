@@ -42,5 +42,5 @@ a:hover {
 }
 
 .tbl-content {
-    background-color: #9b9b9b;
+    border: 1px solid black;
 }
